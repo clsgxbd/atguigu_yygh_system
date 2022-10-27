@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({"com.atguigu"})
-@MapperScan("com.atguigu.yygh.hosp.mapper")
 public class HospConfig {
 
     /**

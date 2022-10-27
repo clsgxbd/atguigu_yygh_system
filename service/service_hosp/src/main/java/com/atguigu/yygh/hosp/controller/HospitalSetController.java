@@ -26,13 +26,13 @@ import java.util.List;
  */
 @Api(tags = "医院设置管理")
 @RestController
-@RequestMapping("/yygh/hosp/hospitalSet")
-@CrossOrigin //跨域
+@RequestMapping("/admin/hosp/hospitalSet")
+//@CrossOrigin //跨域
 public class HospitalSetController {
     @Autowired
     private HospitalSetService hospitalSetService;
 
-    @ApiOperation("分页及待条件查询")
+    @ApiOperation("分页及带条件查询")
     @PostMapping("/findHospSetPage/{current}/{limit}")
     public R findHospSetPage(
             @ApiParam("当前页码")
@@ -115,8 +115,8 @@ public class HospitalSetController {
 
 
     @ApiOperation("批量删除")
-    @DeleteMapping("/deleteHospSetByIds")
-    public R deleteHospSetById(@RequestBody List<Long> idList){
+    @DeleteMapping("/deleteBatch")
+    public R deleteBatch(@RequestBody List<Long> idList){
 //        // 模拟异常
 //        try {
 //            int i = 1 / 0;
@@ -134,12 +134,11 @@ public class HospitalSetController {
 
     @ApiOperation("医院锁定解锁")
     @PutMapping("/lockHospitalSet/{id}/{status}")
-    public R deleteHospSetById(@PathVariable long id , @PathVariable Integer status ){
+    public R lockHospitalSet(@PathVariable long id , @PathVariable Integer status ){
         HospitalSet hospitalSet = hospitalSetService.getById(id);
         hospitalSet.setStatus(status);
         hospitalSetService.updateById(hospitalSet);
         return R.ok();
     }
-
 }
 

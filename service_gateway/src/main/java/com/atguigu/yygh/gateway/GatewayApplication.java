@@ -1,19 +1,17 @@
-package com.atguigu.yygh.hosp;
+package com.atguigu.yygh.gateway;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author damu
- * @date 2022/10/17 20:19
+ * @date 2022/10/27 21:51
  */
 @SpringBootApplication
-@MapperScan("com.atguigu.yygh.hosp.mapper")
 @EnableDiscoveryClient
-public class ServiceHospApplication {
+public class GatewayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceHospApplication.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
 }

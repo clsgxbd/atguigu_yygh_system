@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
  * @date 2022/10/19 20:46
  */
 @Api(tags = "登录管理")
-@RequestMapping("/admin/hosp")
-@CrossOrigin // 跨域
+@RequestMapping("/user/hosp")
+//@CrossOrigin // 跨域
 @RestController
 public class IndexController {
 
